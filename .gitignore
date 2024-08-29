@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Files
+files
+
+# Database
+db/*.db
+
+# Environment
+.env

@@ -1,0 +1,15 @@
+### Escopo do Projeto
+
+- Configuração do Projeto:
+    - Back-end Em Node JS
+    - Fastify para Rotas
+    - Zod para Validações
+
+- Definições dos Endpoints:
+  - GET /images | Endpoint para listar imagens disponíveis.
+  - POST /images/upload | Endpoint para enviar imagens que serão processadas.
+  - GET /images/  | Endpoint para recuperar uma imagem específica ou seus metadados.
+
+- Integração com a API do Google Gemini:
+  - Criar conta, pegar chave e configurar a integração para o processamento das imagens no Gemini
+  - Integrar a resposta do Gemini na api do backend

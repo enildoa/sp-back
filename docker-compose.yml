@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+      build: .
+      container_name: node_20lts
+      restart: always
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "3"
+      ports:
+        - 80:80
+      volumes:
+        - .:/usr/app
+        - /usr/app/node_modules
