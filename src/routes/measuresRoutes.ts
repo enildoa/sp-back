@@ -166,7 +166,7 @@ export async function MeasuresRoutes(app: FastifyInstance) {
         request.body,
       )
 
-      const measure = await knex('measures').where({id: measure_uuid, measure_value: confirmed_value }).first()
+      const measure = await knex('measures').where({id: measure_uuid}).first()
 
       if(measure) {
         if(measure.has_confirmed) {
@@ -174,7 +174,7 @@ export async function MeasuresRoutes(app: FastifyInstance) {
         }else{
           await knex('measures')
           .where({id: measure_uuid})
-          .update({has_confirmed: true})
+          .update({measure_value: confirmed_value, has_confirmed: true})
 
           reply.status(200).send({success: true});
         }
