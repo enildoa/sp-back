@@ -12,7 +12,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@fastify/multipart": "^8.3.0",
     "@fastify/static": "^7.0.4",
     "@google/generative-ai": "^0.17.1",
     "better-sqlite3": "^11.2.1",

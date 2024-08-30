@@ -12,17 +12,17 @@ export class GeminiService {
     });
   }
 
-  public async getMeterMeasurement(base64Image: string, imageType:string, meterType?: 'WATER' | 'GAS'): Promise<any> {
+  public async getMeterMeasurement(base64Image: string, meterType: string): Promise<any> {
     try {
       const payload = [ 
         {
           inlineData: {
             data: base64Image,
-            mimeType: imageType,
+            mimeType: 'image/jpeg',
           },
         },
         {
-          text: `Qual consumo de ${meterType ? meterType.toLowerCase() : 'unknown'} nessa imagem fornecida.`,
+          text: `Devolva o consumo de ${meterType ? meterType.toLowerCase() : 'unknown'} na imagem fornecida.`,
         }
       ];
 
@@ -31,9 +31,9 @@ export class GeminiService {
       return result.response.text();
     } catch (error) {
       if (error instanceof Error) {
-        throw new Error(`Erro ao gerar conteúdo no Gemini: ${error.message}`);
+        return new Error(`Erro ao gerar conteúdo no Gemini: ${error.message}`);
       } else {
-        throw new Error('Erro desconhecido ao gerar conteúdo no Gemini.');
+        return new Error('Erro desconhecido ao gerar conteúdo no Gemini.');
       }
     }
   }

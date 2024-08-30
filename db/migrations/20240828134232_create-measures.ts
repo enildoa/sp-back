@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<void> {
     table.uuid('id').primary()
     table.text('customer_code').notNullable()
     table.text('image_url').notNullable()
-    table.text('measure_value').notNullable()
+    table.integer('measure_value').notNullable()
     table.boolean('has_confirmed').notNullable()
     table.text('measure_type').notNullable()
     table.timestamp('measure_datetime').notNullable()

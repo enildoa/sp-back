@@ -16,4 +16,4 @@ COPY . .
 
 EXPOSE 80
 
-CMD ["npm", "run", "dev"]
+CMD ["sh", "-c", "node --no-warnings --import tsx ./node_modules/.bin/knex migrate:latest && npm run dev"]
