@@ -6,9 +6,10 @@
     - Zod para Validações
 
 - Definições dos Endpoints:
-  - GET /images | Endpoint para listar imagens disponíveis.
-  - POST /images/upload | Endpoint para enviar imagens que serão processadas.
-  - GET /images/  | Endpoint para recuperar uma imagem específica ou seus metadados.
+  - GET  /<customer code>/list: Responsável por listar as medidas realizadas por um determinado cliente
+  - POST /upload: Responsável por receber uma imagem em base 64, consultar o Gemini e retornar a
+medida lida pela API
+  - PATCH  /confirm: Responsável por confirmar ou corrigir o valor lido pelo LLM,
 
 - Integração com a API do Google Gemini:
   - Criar conta, pegar chave e configurar a integração para o processamento das imagens no Gemini
